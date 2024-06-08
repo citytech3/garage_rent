@@ -242,9 +242,9 @@
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
         const service = document.getElementById('service').value;
-        const reservationDate = document.getElementById('reservation-date').value;
-        const dropoffDate = document.getElementById('dropoff-date').value;
-        
+        const reservationDate = new Date(document.getElementById('reservation-date').value).toLocaleString('en-US', { timeZone: 'UTC' });
+        const dropoffDate = new Date(document.getElementById('dropoff-date').value).toLocaleString('en-US', { timeZone: 'UTC' });
+
         // Display the reservation details on the webpage
         document.getElementById('reservation-details').innerText = `
             Full Name: ${name}
@@ -256,7 +256,7 @@
         document.getElementById('reservation-info').style.display = 'block';
 
         // Send the reservation details via email using EmailJS
-        emailjs.send(service_d77bbih, template_rujsd5m, {
+        emailjs.send('service_d77bbih', 'template_rujsd5m', {
             name: name,
             email: email,
             service: service,
@@ -270,6 +270,7 @@
         });
     });
 </script>
+
 
 </body>
 </html>
