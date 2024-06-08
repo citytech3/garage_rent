@@ -248,8 +248,8 @@
         const email = document.getElementById('email').value;
         const phone = document.getElementById('phone').value;
         const service = document.getElementById('service').value;
-        const reservationDate = new Date(document.getElementById('reservation-date').value).toLocaleString('en-US', { timeZone: 'CST' });
-        const dropoffDate = new Date(document.getElementById('dropoff-date').value).toLocaleString('en-US', { timeZone: 'CST' });
+        const reservationDate = new Date(document.getElementById('reservation-date').value).toLocaleString('en-US', { timeZone: 'UTC' });
+        const dropoffDate = new Date(document.getElementById('dropoff-date').value).toLocaleString('en-US', { timeZone: 'UTC' });
 
         // Display the reservation details on the webpage
         document.getElementById('reservation-details').innerText = `
