@@ -104,6 +104,12 @@
         }
     }
 </style>
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init("YOUR_USER_ID"); // Replace "YOUR_USER_ID" with your EmailJS user ID
+   })();
+</script>
 </head>
 <body>
 
@@ -199,7 +205,7 @@
         <button type="submit">Submit Reservation</button>
     </form>
 
-    <div class="reservation-info" id="reservation-info">
+    <div class="reservation-info" id="reservation-info" style="display: none;">
         <h3>Reservation Details</h3>
         <p id="reservation-details"></p>
     </div>
@@ -216,17 +222,27 @@
 <script>
     document.getElementById('reservation-form').addEventListener('submit', function(event) {
         event.preventDefault();
-        
+
         const reservationDate = document.getElementById('reservation-date').value;
         const dropoffDate = document.getElementById('dropoff-date').value;
         
-        const reservationDetails = `
-            <strong>Reservation Date and Time:</strong> ${reservationDate} <br>
-            <strong>Drop-off Date and Time:</strong> ${dropoffDate}
+        // Display the reservation details on the webpage
+        document.getElementById('reservation-details').innerText = `
+            Reservation Date and Time: ${reservationDate}
+            Drop-off Date and Time: ${dropoffDate}
         `;
-        
-        document.getElementById('reservation-details').innerHTML = reservationDetails;
         document.getElementById('reservation-info').style.display = 'block';
+
+        // Send the reservation details via email using EmailJS
+        emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
+            reservation_date: reservationDate,
+            dropoff_date: dropoffDate
+        })
+        .then(function(response) {
+            alert('Reservation submitted successfully!');
+        }, function(error) {
+            alert('Failed to submit reservation. Please try again.');
+        });
     });
 </script>
 
