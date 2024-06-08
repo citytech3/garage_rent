@@ -56,45 +56,52 @@
         width: 500px;
         height: auto;
     }
+    form {
+        margin: 2rem 0;
+        padding: 2rem;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    form div {
+        margin-bottom: 1rem;
+    }
+    form label {
+        display: block;
+        margin-bottom: .5rem;
+    }
+    form input, form select {
+        width: 100%;
+        padding: .5rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+    }
+    form button {
+        display: block;
+        width: 100%;
+        padding: .7rem;
+        background: #333;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+    }
+    form button:hover {
+        background: #555;
+    }
+    .reservation-info {
+        margin: 2rem 0;
+        padding: 2rem;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
     @media (max-width: 768px) {
         .service-table img {
             width: 100%;
             height: auto;
         }
-    }
-    .reservation-form {
-        background-color: #fff;
-        padding: 2rem;
-        border: 1px solid #ddd;
-        margin: 2rem 0;
-    }
-    .reservation-form h3 {
-        margin-top: 0;
-    }
-    .reservation-form label {
-        display: block;
-        margin: 0.5rem 0 0.25rem;
-    }
-    .reservation-form input[type="text"],
-    .reservation-form input[type="email"],
-    .reservation-form input[type="datetime-local"],
-    .reservation-form textarea {
-        width: 100%;
-        padding: 0.5rem;
-        margin-bottom: 1rem;
-        border: 1px solid #ddd;
-        border-radius: 4px;
-    }
-    .reservation-form input[type="submit"] {
-        background-color: #333;
-        color: white;
-        border: none;
-        padding: 0.75rem 1.5rem;
-        cursor: pointer;
-        border-radius: 4px;
-    }
-    .reservation-form input[type="submit"]:hover {
-        background-color: #555;
     }
 </style>
 </head>
@@ -180,32 +187,23 @@
         </tr>
     </table>
 
-    <div class="reservation-form">
-        <h3>Reservation Form</h3>
-        <form action="/submit_reservation" method="POST">
-            <label for="name">Full Name:</label>
-            <input type="text" id="name" name="name" required>
+    <form id="reservation-form">
+        <div>
+            <label for="reservation-date">Reservation Date and Time:</label>
+            <input type="datetime-local" id="reservation-date" name="reservation-date" required>
+        </div>
+        <div>
+            <label for="dropoff-date">Drop-off Date and Time:</label>
+            <input type="datetime-local" id="dropoff-date" name="dropoff-date" required>
+        </div>
+        <button type="submit">Submit Reservation</button>
+    </form>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-
-            <label for="service">Service:</label>
-            <select id="service" name="service" required>
-                <option value="garage_parking">Garage plus Parking Spot</option>
-                <option value="luggage_storage">Luggage Storage</option>
-                <option value="car_storage">Car Storage</option>
-            </select>
-
-            <label for="datetime">Reservation Date and Time:</label>
-            <input type="datetime-local" id="datetime" name="datetime" required>
-
-            <label for="message">Additional Message:</label>
-            <textarea id="message" name="message" rows="4"></textarea>
-
-            <input type="submit" value="Submit Reservation">
-        </form>
+    <div class="reservation-info" id="reservation-info">
+        <h3>Reservation Details</h3>
+        <p id="reservation-details"></p>
     </div>
-
+    
     <p>Please feel free to contact us if you have any questions. It is a safe and nice area.</p>
 </div>
 
@@ -214,6 +212,23 @@
         <p>&copy; 2024 New York Company. All rights reserved.</p>
     </div>
 </footer>
+
+<script>
+    document.getElementById('reservation-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        
+        const reservationDate = document.getElementById('reservation-date').value;
+        const dropoffDate = document.getElementById('dropoff-date').value;
+        
+        const reservationDetails = `
+            <strong>Reservation Date and Time:</strong> ${reservationDate} <br>
+            <strong>Drop-off Date and Time:</strong> ${dropoffDate}
+        `;
+        
+        document.getElementById('reservation-details').innerHTML = reservationDetails;
+        document.getElementById('reservation-info').style.display = 'block';
+    });
+</script>
 
 </body>
 </html>
