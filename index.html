@@ -1,136 +1,159 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New York Company</title>
 <style>
-table, th, td {
-  border: 1px solid black;
-  border-collapse: collapse;
-}
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    header, footer {
+        background-color: #333;
+        color: white;
+        padding: 1rem;
+        text-align: center;
+    }
+    header h1, header h2 {
+        margin: 0;
+    }
+    .container {
+        max-width: 1200px;
+        margin: auto;
+        overflow: hidden;
+        padding: 0 2rem;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2rem 0;
+    }
+    table, th, td {
+        border: 1px solid #ddd;
+    }
+    th, td {
+        padding: 1rem;
+        text-align: left;
+    }
+    th {
+        background-color: #f4f4f4;
+    }
+    h3 {
+        color: #333;
+    }
+    img {
+        width: 100%;
+        height: auto;
+    }
+    .service-table {
+        margin-bottom: 4rem;
+    }
+    .service-table img {
+        width: 500px;
+        height: auto;
+    }
+    @media (max-width: 768px) {
+        .service-table img {
+            width: 100%;
+            height: auto;
+        }
+    }
 </style>
 </head>
 <body>
 
-<table style="width:100%">
+<header>
+    <div class="container">
+        <h1>纽约公司</h1>
+        <h2>我们为您提供最好的服务</h2>
+    </div>
+</header>
 
-<tr>
-    <th>  <h1>纽约公司     </h1>    </th>
-    <th>  <h1>   我们为您提供最好的服务  </h1>    </th>
-</tr>
+<div class="container">
+    <table>
+        <tr>
+            <th>Contact info.</th>
+            <td>
+                21-56th 43rd street, Long Island City, NY 11105 <br>
+                <a href="mailto:xinghe212@gmail.com">xinghe212@gmail.com</a> <br>
+                646-504-3475
+            </td>
+        </tr>
+    </table>
 
-<tr>
-    <th>  Contact info.   </th>
-    <th>     21-56th 43rd street,  Long Island City, NY11105 <br>  xinghe212@gmail.com <br>  646-504-3475  </th>
-</tr>
+    <h3>服务 (1) Great Garage plus Parking Spot, Astoria, Long Island City</h3>
+    <table class="service-table">
+        <tr>
+            <th rowspan="4">
+                <img src="Garabe-Parking.png" alt="Garage and Parking">
+            </th>
+            <td>
+                The safe garage plus parking space are located in Ditmars Ave and 43rd Street and available to lease. Great location and safe area.
+            </td>
+        </tr>
+        <tr>
+            <td>Max. Vehicle Size: 2 cars, Large SUV/4WD</td>
+        </tr>
+        <tr>
+            <td>Garage Area: 20 ft x 10 ft. <br> Max. Height: 6.5 feet</td>
+        </tr>
+        <tr>
+            <td>Parking Space Area: 20 ft x 8.5 ft. <br> Max. Height: No Restriction</td>
+        </tr>
+    </table>
 
-</h2>
+    <h3>服务 (2) 纽约行李寄存 New York Storage Luggage</h3>
+    <table class="service-table">
+        <tr>
+            <th rowspan="2">
+                <img src="Luggage.png" alt="Luggage Storage">
+            </th>
+            <td>我们的服务优质可靠，确保您的行李安全。</td>
+        </tr>
+        <tr>
+            <td>
+                为了提高行李提取和托运的效率，我们恳请您提前预约。我们的工作人员可能会外出运送行李，因此提前预约可确保他们能及时为您提供帮助。请通过小红书消息或发送电子邮件至 <a href="mailto:xinghe212@gmail.com">xinghe212@gmail.com</a> 与我们联系以安排您的预约。我们感谢您的合作，期待为您服务！
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                To enhance the efficiency of luggage pick-up and drop-off, we kindly request that you schedule an appointment in advance. Our staff may be out for luggage deliveries, so booking ensures their availability to assist you promptly. Please reach out to us via Xiaohongshu messaging or email at <a href="mailto:xinghe212@gmail.com">xinghe212@gmail.com</a> to arrange your appointment. We appreciate your cooperation and look forward to serving you!
+            </td>
+        </tr>
+    </table>
 
+    <h3>服务 (3) 纽约车寄存 New York Storage Car</h3>
+    <table class="service-table">
+        <tr>
+            <th rowspan="2">
+                <img src="Parking.jfif" alt="Car Storage">
+            </th>
+            <td>我们确保您的汽车得到一流的护理。</td>
+        </tr>
+        <tr>
+            <td>
+                为了提高取车和还车的效率，我们恳请您提前预约。我们的工作人员可能会外出送车，因此预约可确保他们能及时为您提供帮助。请通过小红书消息或发送电子邮件至 <a href="mailto:xinghe212@gmail.com">xinghe212@gmail.com</a> 与我们联系以安排您的预约。我们感谢您的合作，期待为您服务！
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                To enhance the efficiency of car pick-up and drop-off, we kindly request that you schedule an appointment in advance. Our staff may be out for car deliveries, so booking ensures their availability to assist you promptly. Please reach out to us via Xiaohongshu messaging or email at <a href="mailto:xinghe212@gmail.com">xinghe212@gmail.com</a> to arrange your appointment. We appreciate your cooperation and look forward to serving you!
+            </td>
+        </tr>
+    </table>
 
-</table>
+    <p>Please feel free to contact us if you have any questions. It is a safe and nice area.</p>
+</div>
 
-
-<h3>服务 (1) Great Garage plus Parking Spot, Astoria, Long Island City</h3>
-
-<table style="width:100%">
-  <tr>
-    <th rowspan="10"><img src="Garabe-Parking.png" alt="Trulli" width="500" height="333" ></th>
-        <td> The safe garage plus parking space are located in Ditmars Ave and 43rd Street and available to lease.  Grate location and safe area.
-    </td>
-  </tr>
-
-
-  
-  <tr>
-     <td><p>Max. Vehicle Size: 2 cars, Large SUV/4WD</p>  </td>
-   </tr>
-
-<tr>
-    <td> Garage
-Area: 20 ft x 10 ft. <br>
-Max. Height: 6.5 feet
-</td>
-</tr>
-
-<tr>
-    <td> Parking Space
-Area: 20 ft x 8.5 ft.  <br>
-Max. Height: No Restriction
-</td>
-</tr>
-
-</table>
-
-<h3>服务 (2) 纽约行李寄存 New York Storage Luggage    </h3>
-
-<table style="width:100%">
-  <tr>
-    <th rowspan="10"><img src="Luggage.png" alt="Trulli" width="500" height="333" ></th>
-        <td>我们的服务优质可靠，确保您的行李安全。
-    </td>
-  </tr>
-
-
-  
-  <tr>
-     <td><p>为了提高行李提取和托运的效率，我们恳请您提前预约。我们的工作人员可能会外出运送行李，因此提前预约可确保他们能及时为您提供帮助。请通过小红书消息或发送电子邮件至 xinghe212@gmail.com 与我们联系以安排您的预约。我们感谢您的合作，期待为您服务！   </p>  </td>
-   </tr>
-
-<tr>
-    <td>To enhance the efficiency of luggage pick-up and drop-off, we kindly request that you schedule an appointment in advance. Our staff may be out for luggage deliveries, so booking ensures their availability to assist you promptly. Please reach out to us via Xiaohongshu messaging or email at xinghe212@gmail.com to arrange your appointment. We appreciate your cooperation and look forward to serving you!
-</td>
-</tr>
-
-
-
-</h2>
-
-<table style="width:100%">
-  <tr>
-
-
-
-  
-</table>
-
-
-
-<h3>服务 (3) 纽约车寄存 New York Storage Car    </h3>
-
-<table style="width:100%">
-  <tr>
-    <th rowspan="10"><img src="Parking.jfif" alt="Trulli" width="500" height="333" ></th>
-        <td>我们确保您的汽车得到一流的护理。
-    </td>
-  </tr>
-
-
-  
-  <tr>
-     <td><p>为了提高取车和还车的效率，我们恳请您提前预约。我们的工作人员可能会外出送车，因此预约可确保他们能及时为您提供帮助。请通过小红书消息或发送电子邮件至 xinghe212@gmail.com 与我们联系以安排您的预约。我们感谢您的合作，期待为您服务！   </p>  </td>
-   </tr>
-
-<tr>
-    <td>To enhance the efficiency of car pick-up and drop-off, we kindly request that you schedule an appointment in advance. Our staff may be out for car deliveries, so booking ensures their availability to assist you promptly. Please reach out to us via Xiaohongshu messaging or email at xinghe212@gmail.com to arrange your appointment. We appreciate your cooperation and look forward to serving you!
-</td>
-</tr>
-
-
-
-</h2>
-
-<table style="width:100%">
-  <tr>
-
-
-
-  
-</table>
-
-
-
-
-
-
-<p>Please feel free to contact us if you have any quesitons. It is safe and nice area </p>
+<footer>
+    <div class="container">
+        <p>&copy; 2024 New York Company. All rights reserved.</p>
+    </div>
+</footer>
 
 </body>
 </html>
